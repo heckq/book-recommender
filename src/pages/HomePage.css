@@ -1,0 +1,13 @@
+body {
+    font-family: 'Press Start 2P', cursive;
+    background-color: #A3806C; /* Твій новий колір фону */
+}
+
+.home-page {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 100vh;
+}
+
+

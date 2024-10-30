@@ -5,13 +5,14 @@ const config = {
     entry: path.resolve(__dirname, './src/index.js'),
     output: {
         path: path.resolve(__dirname, './dist'),
+        filename: 'bundle.js',
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: path.join(__dirname, 'public', 'index.html')
-        })
+            template: path.join(__dirname, 'public', 'index.html'),
+        }),
     ],
-    mode : 'development',
+    mode: 'development',
     module: {
         rules: [
             {
@@ -25,6 +26,14 @@ const config = {
                         },
                     },
                 ],
+            },
+            {
+                test: /\.css$/i,
+                use: ['style-loader', 'css-loader'],
+            },
+            {
+                test: /\.(png|jpg|jpeg|gif|svg)$/i,
+                type: 'asset/resource',
             },
         ],
     },

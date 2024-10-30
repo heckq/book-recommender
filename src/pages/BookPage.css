@@ -1,0 +1,112 @@
+/* Container for the book page */
+.book-page {
+    display: flex;
+    justify-content: space-between;
+    height: 95vh;
+    width: 100vw;
+    padding-top: 5vh;
+}
+
+/* Left panel styling */
+.left-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20%;
+}
+
+/* Navigation buttons placed in the left panel */
+.top-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10vh;
+
+
+}
+
+.nav-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.nav-button img {
+    width: 10vh; /* Larger button size */
+    height: 10vh;
+}
+
+/* Book icon styling with increased size */
+.book-icon {
+    width: 40vh; /* Increase the book icon size */
+    display: flex;
+    align-items: center;
+    padding-top: 5vh;   
+}
+
+/* Scroll container with further increased size and rotated background */
+.scroll {
+    position: relative;
+    display: flex;
+    flex-direction: row; /* Arrange icons in a row */
+    gap: 5vh;
+    height: 40vh;
+    align-items: center;
+    justify-content: center; /* Center icons in the scroll */
+}
+
+.scroll::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../assets/images/scroll-background.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: rotate(-90deg); /* Rotate the background image */
+    z-index: -1; /* Place it behind the content */
+}
+
+/* Scroll icon styling */
+.scroll-icon {
+    padding-top: 6%;
+    width: 5vh;
+    height: 5vh;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+}
+
+/* Right panel styling */
+.right-panel {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Book information styling */
+.book-info h1 {
+    font-size: 2em;
+    margin: 0;
+    color: #4b3621;
+}
+
+.book-info h2 {
+    font-size: 1.5em;
+    margin: 5px 0;
+    color: #6d4e30;
+}
+
+.genres {
+    font-size: 1em;
+    color: #7f5f40;
+    margin-bottom: 15px;
+}
+
+.description {
+    font-size: 1em;
+    color: #4b3621;
+    line-height: 1.5;
+}

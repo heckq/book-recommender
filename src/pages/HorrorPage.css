@@ -1,0 +1,23 @@
+body {
+    font-family: 'Press Start 2P', cursive;
+    background-color: #A3806C; /* Твій новий колір фону */
+}
+
+.horror-page {
+    background-image: url("../assets/images/blood_stains.jpg");
+    background-size: 80vw;
+    background-repeat: no-repeat;
+
+    /* Adjust the horizontal and vertical position */
+    background-position: 70%, right;
+
+    /* or use: background-position: 80% top; to move it to the right */
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 100vh;
+}
+
+
+

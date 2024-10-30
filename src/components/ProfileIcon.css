@@ -1,0 +1,8 @@
+.profile-icon {
+    width: 5vw;
+    height: 5vw;
+    border-radius: 50%; /* Зробимо іконку круглою */
+    object-fit: contain;  /* Іконка буде підлаштовуватися під контейнер */
+    cursor: pointer;
+}
+

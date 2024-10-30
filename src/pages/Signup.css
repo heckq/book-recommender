@@ -1,0 +1,78 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Press Start 2P', cursive;
+    background-color: #A3806C; /* Твій новий колір фону */
+}
+
+.signup-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #A3806C; /* Колір фону */
+}
+
+.signup-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type="text"], input[type="password"] {
+    width: 600px;
+    padding: 15px;
+    margin: 10px 0;
+    border: 5px solid #684731; /* Коричневий контур */
+    background-color: #AD8D70; /* Бежевий колір полів */
+    color: #684731;
+    font-size: 25px;
+    border-radius: 5px;
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+}
+
+input[type="text"]::placeholder, input[type="password"]::placeholder {
+    color: #5e3b2e;
+    text-align: center;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+    outline: none;
+}
+
+.signup-button {
+    background-color: #684731; /* Темно-коричнева кнопка */
+    color: #AD8D70; /* Світлий текст */
+    border: none;
+    width: 560px;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: 'Press Start 2P', cursive; /* Стиль шрифта */
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.signup-button:hover {
+    background-color: #613f28; /* Темніший відтінок при наведенні */
+}
+
+.signup-footer {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 14px;
+    color: #684731;
+}
+
+.signup-footer a {
+    color: #684731;
+    text-decoration: none;
+}
+
+.signup-footer a:hover {
+    text-decoration: underline;
+    color: #613f28;
+}
