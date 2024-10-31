@@ -1,0 +1,42 @@
+/* NotFound.module.css */
+.notFoundPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Висота на всю сторінку */
+    background-color: #A3806C; /* Колір фону */
+    text-align: center; /* Центруємо текст */
+}
+
+.notFoundPage h1 {
+    color: #684731;
+    font-size: 80px; /* Великий розмір для коду 404 */
+    margin: 0; /* Без відступів */
+}
+
+.notFoundPage h2 {
+    color: #684731;
+    font-size: 24px; /* Розмір підзаголовка */
+    margin: 10px 0; /* Відступи знизу */
+}
+
+.notFoundPage p {
+    color: #684731;
+    font-size: 18px; /* Розмір тексту */
+    margin-bottom: 20px; /* Відступ знизу */
+}
+
+.homeLink {
+    display: inline-block; /* Відображаємо як блочний елемент */
+    padding: 10px 20px; /* Внутрішні відступи */
+    background-color: #684731; /* Колір фону кнопки */
+    color: #AD8D70; /* Колір тексту */
+    text-decoration: none; /* Без підкреслення */
+    border-radius: 5px; /* Заокруглені кути */
+    transition: background-color 0.3s; /* Анімація зміни кольору фону */
+}
+
+.homeLink:hover {
+    background-color: #613f28; /* Темніший відтінок при наведенні */
+}

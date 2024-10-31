@@ -1,10 +1,13 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import styles from './ProfileIcon.module.css';
 import profileImg from '../assets/images/profile-picture.jpg';
 
 const ProfileIcon = () => {
+    const navigate = useNavigate();
+
     const handleProfileClick = () => {
-        console.log("Profile icon clicked");
+        navigate('/profile'); // Navigate to the profile page
     };
 
     return (

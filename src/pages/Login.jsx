@@ -24,7 +24,7 @@ const Login = () => {
                 />
                 <button className={styles.loginButton} onClick={handleLogin}>Log in</button>
                 <div className={styles.loginFooter}>
-                    Don't have an account? <a href="/src/pages/Signup">Sign in</a>
+                    Don't have an account? <a href="/Signup">Sign in</a>
                 </div>
             </div>
         </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate from react-router-dom
 import styles from './Bookshelf.module.css';
 import spiderWebImg from '../assets/images/spider-web.jpg';
 
@@ -21,12 +22,13 @@ const getRandomHeight = () => {
 };
 
 const BookShelf = ({ isProfilePage, genre }) => {
+    const navigate = useNavigate(); // Initialize the useNavigate hook
 
     const displayBooks = !isProfilePage && books.length > 0;
 
     const handleBookClick = (bookTitle) => {
-
         console.log(`Navigating to book: ${bookTitle}`);
+        navigate('*'); // Navigate to NotFoundPage when a book is clicked
     };
 
     return (

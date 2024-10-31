@@ -16,7 +16,7 @@ const Signup = () => {
                 <input type="password" placeholder="Confirm password" required />
                 <button className={styles.signupButton} onClick={handleSignup}>Sign up</button>
                 <div className={styles.signupFooter}>
-                    Already have an account? <a href="/src/pages/Login">Log in</a>
+                    Already have an account? <a href="/Login">Log in</a>
                 </div>
             </div>
         </div>

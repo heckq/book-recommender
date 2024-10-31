@@ -17,9 +17,10 @@ module.exports = (env, argv) => {
         mode: isProduction ? "production" : "development",
         devtool: isProduction ? "source-map" : "inline-source-map",
         devServer: {
-            static: path.resolve(__dirname, "dist"),
+            static: path.resolve(__dirname, "dist"), // Serve files from 'dist' directory
             port: 3000,
             open: true,
+            historyApiFallback: true, // Enable this to handle non-existent routes
         },
         module: {
             rules: [
