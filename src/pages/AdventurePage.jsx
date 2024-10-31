@@ -1,21 +1,23 @@
 import React from 'react';
 import GenreNav from '../components/GenreNav';
-import './AdventurePage.css';
+import styles from './AdventurePage.module.css';
 import SearchBar from '../components/SearchBar';
 import Bookshelf from '../components/Bookshelf';
 import ProfileIcon from '../components/ProfileIcon';
 
 const AdventurePage = () => {
     return (
-        <div className="adventure-page"> {/* Update the class name if necessary */}
+        <div className={styles.adventurePage}>
             <GenreNav />
-            <div className="content">
+            <div className={styles.content}>
                 <SearchBar />
-                <Bookshelf isProfilePage={false} genre="Adventure books!" />
+                <div className={styles.bookshelfContainer}>
+                    <Bookshelf isProfilePage={false} genre="Adventure books!" />
+                </div>
+                </div>
+                <ProfileIcon />
             </div>
-            <ProfileIcon />
-        </div>
-    );
-};
+            );
+            };
 
-export default AdventurePage; // Ensure this matches the new component name
+            export default AdventurePage;

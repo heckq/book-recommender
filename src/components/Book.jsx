@@ -1,10 +1,11 @@
 import React from 'react';
-import './Book.css';
+import PropTypes from 'prop-types';
+import styles from './Book.module.css';
 
 const Book = ({ title, color, height, onClick }) => {
     return (
         <div
-            className="book"
+            className={styles.book}
             style={{
                 backgroundColor: color,
                 height: `${height}vh`,
@@ -12,9 +13,16 @@ const Book = ({ title, color, height, onClick }) => {
             }}
             onClick={onClick}
         >
-            <span className="book-title">{title}</span>
+            <span className={styles.bookTitle}>{title}</span>
         </div>
     );
+};
+
+Book.propTypes = {
+    title: PropTypes.string.isRequired,
+    color: PropTypes.string.isRequired,
+    height: PropTypes.number.isRequired,
+    onClick: PropTypes.func.isRequired,
 };
 
 export default Book;

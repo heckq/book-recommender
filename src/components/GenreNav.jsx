@@ -1,5 +1,6 @@
 import React from 'react';
-import './GenreNav.css';
+import PropTypes from 'prop-types';
+import styles from './GenreNav.module.css';
 import homeImg from '../assets/images/home.jpg';
 import horrorImg from '../assets/images/horror.jpg';
 import adventureImg from '../assets/images/adventure.jpg';
@@ -18,23 +19,35 @@ const GenreNav = () => {
     ];
 
     const handleGenreClick = (genre) => {
-        // Додайте логіку обробки натискань жанрів
         console.log(`${genre} clicked`);
     };
 
     return (
-        <nav className="genre-nav">
+        <nav className={styles.genreNav}>
             <ul>
-                {genres.map((genre) => (
-                    <li key={genre.name}>
-                        <button onClick={() => handleGenreClick(genre.name)} style={{ background: 'none', border: 'none', padding: 0 }}>
-                            <img src={genre.img} alt={genre.name} className="genre-image" />
-                        </button>
-                    </li>
-                ))}
+                {genres.length === 0 ? (
+                    <li>No genres available</li>
+                ) : (
+                    genres.map((genre) => (
+                        <li key={genre.name}>
+                            <button onClick={() => handleGenreClick(genre.name)} style={{ background: 'none', border: 'none', padding: 0 }}>
+                                <img src={genre.img} alt={genre.name} className={styles.genreImage} />
+                            </button>
+                        </li>
+                    ))
+                )}
             </ul>
         </nav>
     );
+};
+
+GenreNav.propTypes = {
+    genres: PropTypes.arrayOf(
+        PropTypes.shape({
+            name: PropTypes.string.isRequired,
+            img: PropTypes.string.isRequired,
+        })
+    ),
 };
 
 export default GenreNav;

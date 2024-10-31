@@ -1,0 +1,17 @@
+.searchBar {
+    position: relative;
+    text-align: center;
+}
+
+.scrollImage {
+    width: 50vw;
+    height: auto;
+    cursor: pointer;
+}
+
+.scrollContainer {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}

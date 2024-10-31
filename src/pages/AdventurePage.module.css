@@ -1,0 +1,21 @@
+body {
+    font-family: 'Press Start 2P', cursive;
+    background-color: #A3806C;
+}
+.bookshelf-container {
+    padding-top: 15vh;
+}
+.adventure-page {
+    display: flex;
+    background-image: url("../assets/images/map.png");
+
+    background-size: 180vh;
+    background-position:  right;
+    background-repeat: no-repeat;
+
+}
+
+.content{
+    margin-left: 4vw;
+}
+

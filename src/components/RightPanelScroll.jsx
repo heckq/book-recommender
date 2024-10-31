@@ -1,5 +1,5 @@
 import React from 'react';
-import './RightPanelScroll.css';
+import styles from './RightPanelScroll.module.css';
 import favoriteImg from '../assets/images/favorite-icon.jpg';
 import readLaterImg from '../assets/images/read-later-icon.jpg';
 import settingsImg from '../assets/images/settings-icon.jpg';
@@ -12,17 +12,17 @@ const RightPanelScroll = () => {
     ];
 
     const handleClick = (name) => {
-        // Додайте логіку обробки натискань
+
         console.log(`${name} clicked`);
     };
 
     return (
-        <div className="right-panel-scroll">
-            <ul className="icon-list">
+        <div className={styles.rightPanelScroll}>
+            <ul className={styles.iconList}>
                 {icons.map((icon) => (
-                    <li key={icon.name} className="icon-item">
+                    <li key={icon.name} className={styles.iconItem}>
                         <button onClick={() => handleClick(icon.name)} style={{ background: 'none', border: 'none', padding: 0 }}>
-                            <img src={icon.img} alt={icon.name} className="icon-image" />
+                            <img src={icon.img} alt={icon.name} className={styles.iconImage} />
                         </button>
                     </li>
                 ))}

@@ -1,32 +1,30 @@
 import React from 'react';
 import GenreNav from '../components/GenreNav';
+import styles from './ProfilePage.module.css';
 import Bookshelf from '../components/Bookshelf';
 import RightPanelScroll from '../components/RightPanelScroll';
-import './ProfilePage.css';
-import pfp from '../assets/images/profile-picture.jpg';
+import profilePicture from '../assets/images/profile-picture.jpg';
 
-const ProfilePage = () => {
+const UserProfilePage = () => {
     return (
-        <div className="profile-page">
+        <div className={styles.profilePage}>
             <GenreNav />
-            <div className="content">
-                <div className="profile-header">
-                    <div className="profile-icon">
-                        <img
-                            src={pfp}
-                            alt="Profile"
-                            className="profile-image"
-                        />
-                    </div>
-                    <div className="username">
+            <div className={styles.content}>
+                <div className={styles.profileContainer}>
+                    <img
+                        src={profilePicture}
+                        alt="Profile"
+                        className={styles.profileImage}
+                    />
+                    <div className={styles.username}>
                         Username
                     </div>
                 </div>
-                <Bookshelf isProfilePage={true} genre={"Favourite books"} />
+                <Bookshelf isProfilePage={true} genre="Your Books!" />
             </div>
             <RightPanelScroll />
         </div>
     );
 };
 
-export default ProfilePage;
+export default UserProfilePage;

@@ -1,21 +1,23 @@
 import React from 'react';
 import GenreNav from '../components/GenreNav';
-import './ComedyPage.css';
+import styles from './ComedyPage.module.css';
 import SearchBar from '../components/SearchBar';
 import Bookshelf from '../components/Bookshelf';
 import ProfileIcon from '../components/ProfileIcon';
 
 const ComedyPage = () => {
     return (
-        <div className="comedy-page"> {/* Update the class name if necessary */}
+        <div className={styles.comedyPage}>
             <GenreNav />
-            <div className="content">
+            <div className={styles.content}>
                 <SearchBar />
-                <Bookshelf isProfilePage={false} genre="Comedy books!" />
+                <div className={styles.bookshelfContainer}>
+                    <Bookshelf isProfilePage={false} genre="Comedy books!" />
+                </div>
             </div>
             <ProfileIcon />
         </div>
     );
 };
 
-export default ComedyPage; // Ensure this matches the new component name
+export default ComedyPage;

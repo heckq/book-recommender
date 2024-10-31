@@ -1,17 +1,25 @@
-import React from 'react';
-import closedScrollImg from '../assets/images/closed-scroll.jpg'; // Path to the closed scroll image
-import './SearchBar.css'; // Import the CSS file for styling
+import React, { useState } from 'react';
+import closedScrollImg from '../assets/images/closed-scroll.jpg';
+import openScrollImg from '../assets/images/open-scroll.jpg';
+import styles from './SearchBar.module.css';
 
 const SearchBar = () => {
+    const [isOpen, setIsOpen] = useState(false);
     const handleSearchClick = () => {
-        // Додайте логіку обробки натискань на кнопку
+        setIsOpen((prevState) => !prevState);
         console.log("Search button clicked");
     };
 
     return (
-        <div className="search-bar">
+        <div className={styles.searchBar}>
             <button onClick={handleSearchClick} style={{ background: 'none', border: 'none', padding: 0 }}>
-                <img src={closedScrollImg} alt="Scroll Search" className="scroll-image" />
+                <div className={styles.scrollContainer}>
+                    <img
+                        src={isOpen ? openScrollImg : closedScrollImg}
+                        alt="Scroll Search"
+                        className={styles.scrollImage}
+                    />
+                </div>
             </button>
         </div>
     );

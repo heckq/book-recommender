@@ -1,4 +1,4 @@
-/* Container for the book page */
+
 .book-page {
     display: flex;
     justify-content: space-between;
@@ -7,7 +7,6 @@
     padding-top: 5vh;
 }
 
-/* Left panel styling */
 .left-panel {
     display: flex;
     flex-direction: column;
@@ -15,7 +14,6 @@
     width: 20%;
 }
 
-/* Navigation buttons placed in the left panel */
 .top-buttons {
     display: flex;
     justify-content: center;
@@ -31,27 +29,25 @@
 }
 
 .nav-button img {
-    width: 10vh; /* Larger button size */
+    width: 10vh;
     height: 10vh;
 }
 
-/* Book icon styling with increased size */
 .book-icon {
-    width: 40vh; /* Increase the book icon size */
+    width: 40vh;
     display: flex;
     align-items: center;
-    padding-top: 5vh;   
+    padding-top: 5vh;
 }
 
-/* Scroll container with further increased size and rotated background */
 .scroll {
     position: relative;
     display: flex;
-    flex-direction: row; /* Arrange icons in a row */
+    flex-direction: row;
     gap: 5vh;
     height: 40vh;
     align-items: center;
-    justify-content: center; /* Center icons in the scroll */
+    justify-content: center;
 }
 
 .scroll::before {
@@ -65,11 +61,10 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    transform: rotate(-90deg); /* Rotate the background image */
-    z-index: -1; /* Place it behind the content */
+    transform: rotate(-90deg);
+    z-index: -1;
 }
 
-/* Scroll icon styling */
 .scroll-icon {
     padding-top: 6%;
     width: 5vh;
@@ -79,14 +74,12 @@
     z-index: 1;
 }
 
-/* Right panel styling */
 .right-panel {
     width: 75%;
     display: flex;
     flex-direction: column;
 }
 
-/* Book information styling */
 .book-info h1 {
     font-size: 2em;
     margin: 0;

@@ -1,13 +1,18 @@
 body {
     font-family: 'Press Start 2P', cursive;
-    background-color: #A3806C; /* Твій новий колір фону */
+    background-color: #A3806C;
 }
-
-.home-page {
+.bookshelf-container {
+    padding-top: 15vh;
+}
+.comedy-page {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
     height: 100vh;
+}
+.content{
+    margin-left: 4vw;
 }
 
 

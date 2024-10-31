@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Press Start 2P', cursive;
-    background-color: #A3806C; /* Твій новий колір фону */
+    background-color: #A3806C;
 }
 
 .signup-page {
@@ -11,7 +11,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #A3806C; /* Колір фону */
+    background-color: #A3806C;
 }
 
 .signup-container {
@@ -24,8 +24,8 @@ input[type="text"], input[type="password"] {
     width: 600px;
     padding: 15px;
     margin: 10px 0;
-    border: 5px solid #684731; /* Коричневий контур */
-    background-color: #AD8D70; /* Бежевий колір полів */
+    border: 5px solid #684731;
+    background-color: #AD8D70;
     color: #684731;
     font-size: 25px;
     border-radius: 5px;
@@ -43,22 +43,22 @@ input[type="text"]:focus, input[type="password"]:focus {
 }
 
 .signup-button {
-    background-color: #684731; /* Темно-коричнева кнопка */
-    color: #AD8D70; /* Світлий текст */
+    background-color: #684731;
+    color: #AD8D70;
     border: none;
     width: 560px;
     padding: 15px;
     margin: 20px 0;
     border-radius: 5px;
     font-size: 16px;
-    font-family: 'Press Start 2P', cursive; /* Стиль шрифта */
+    font-family: 'Press Start 2P', cursive;
     text-transform: uppercase;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 .signup-button:hover {
-    background-color: #613f28; /* Темніший відтінок при наведенні */
+    background-color: #613f28;
 }
 
 .signup-footer {

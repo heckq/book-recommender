@@ -1,33 +1,21 @@
-
 import React from 'react';
-import './Signup.css';
+import styles from './Signup.module.css';
 
 const Signup = () => {
+    const handleSignup = () => {
+
+        console.log("Signup clicked");
+    };
+
     return (
-        <div className="signup-page">
-            <div className="signup-container">
-                <input
-                    type="text"
-                    placeholder="Email"
-                    required
-                />
-                <input
-                    type="text"
-                    placeholder="Username"
-                    required
-                />
-                <input
-                    type="password"
-                    placeholder="Password"
-                    required
-                />
-                <input
-                    type="password"
-                    placeholder="Confirm password"
-                    required
-                />
-                <button className="signup-button">Sign up</button>
-                <div className="signup-footer">
+        <div className={styles.signupPage}>
+            <div className={styles.signupContainer}>
+                <input type="text" placeholder="Email" required />
+                <input type="text" placeholder="Username" required />
+                <input type="password" placeholder="Password" required />
+                <input type="password" placeholder="Confirm password" required />
+                <button className={styles.signupButton} onClick={handleSignup}>Sign up</button>
+                <div className={styles.signupFooter}>
                     Already have an account? <a href="/src/pages/Login">Log in</a>
                 </div>
             </div>
