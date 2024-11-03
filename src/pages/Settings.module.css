@@ -1,0 +1,87 @@
+/* Settings.module.css */
+.settingsPage {
+    display: flex; /* Використовуємо flexbox для вирівнювання */
+    height: 100vh; /* Висота на всю сторінку */
+    background-color: #A3806C; /* Колір фону */
+}
+
+.content {
+    flex: 1; /* Дозволяємо цьому блоку займати залишок простору */
+    display: flex; /* Використовуємо flexbox для центрованого вирівнювання */
+    justify-content: center; /* Горизонтальне вирівнювання по центру */
+    align-items: flex-start; /* Вертикальне вирівнювання зверху */
+    padding-right: 10vw;
+}
+
+.profileContainer {
+    display: flex; /* Використовуємо flexbox для вирівнювання аватара і форми */
+    flex-direction: column; /* Вертикальне вирівнювання */
+    align-items: center; /* Центруємо елементи всередині контейнера */
+}
+
+.avatarContainer {
+    display: flex;
+    flex-direction: column; /* Вертикальне вирівнювання аватара і кнопки */
+    align-items: center; /* Центруємо елементи всередині контейнера */
+    margin-bottom: 20px; /* Відступ знизу */
+}
+
+.avatar {
+    width: 100px; /* Ширина аватара */
+    height: 100px; /* Висота аватара */
+    border-radius: 50%; /* Робимо зображення аватара круглим */
+    margin-bottom: 10px; /* Відступ знизу */
+}
+
+.avatarInput {
+    display: none; /* Сховати стандартне поле вибору файлу */
+}
+
+.avatarLabel {
+    background-color: #684731; /* Колір фону кнопки */
+    color: #AD8D70; /* Колір тексту */
+    border: none; /* Без рамки */
+    width: 200px; /* Ширина кнопки */
+    padding: 10px; /* Внутрішні відступи */
+    margin: 10px 0; /* Відступ зверху і знизу */
+    border-radius: 5px; /* Заокруглені кути */
+    font-size: 16px; /* Розмір шрифту */
+    font-family: 'Press Start 2P', cursive; /* Шрифт */
+    text-transform: uppercase; /* Верхній регістр для тексту */
+    cursor: pointer; /* Курсор при наведенні */
+    transition: background-color 0.3s; /* Анімація зміни кольору фону */
+    text-align: center; /* Центрування тексту */
+}
+
+.avatarLabel:hover {
+    background-color: #613f28; /* Темніший відтінок при наведенні */
+}
+
+.settingsForm {
+    display: flex;
+    flex-direction: column; /* Вертикальне вирівнювання полів */
+    align-items: center; /* Центруємо елементи всередині форми */
+    width: 100%; /* Ширина на всю доступну область */
+    max-width: 400px; /* Максимальна ширина форми */
+
+}
+
+.updateButton {
+    background-color: #684731; /* Колір фону кнопки */
+    color: #AD8D70; /* Колір тексту */
+    border: none; /* Без рамки */
+    width: 100%; /* Ширина кнопки на всю доступну область */
+    padding: 15px; /* Внутрішні відступи */
+    margin: 20px 0; /* Відступ зверху і знизу */
+    border-radius: 5px; /* Заокруглені кути */
+    font-size: 16px; /* Розмір шрифту */
+    font-family: 'Press Start 2P', cursive; /* Шрифт */
+    text-transform: uppercase; /* Верхній регістр для тексту */
+    cursor: pointer; /* Курсор при наведенні */
+    transition: background-color 0.3s; /* Анімація зміни кольору фону */
+    text-align: center; /* Центрування тексту */
+}
+
+.updateButton:hover {
+    background-color: #613f28; /* Темніший відтінок при наведенні */
+}
