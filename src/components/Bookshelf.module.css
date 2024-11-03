@@ -1,0 +1,97 @@
+.bookshelf-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.bookshelf {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    background-color: #7c5944;
+    border-radius: 10px;
+    border: 10px solid #4D2D18;
+    width: 60vw;
+    height: 50vh;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin-top: 80px;
+    position: relative;
+}
+
+.book {
+    flex-grow: 1;
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+    border: 5px solid #684731;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 45vh;
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.book:hover {
+    opacity: 0.8;
+    transform: scale(1.05);
+}
+
+.book-title {
+    color: #593821;
+    display: block;
+    writing-mode: vertical-rl;
+    text-orientation: sideways;
+    transform: rotate(180deg);
+}
+
+
+.genre-border {
+    height: 5vh;
+    background-color: #593821;
+    color: #7c5944;
+    padding: 10px;
+    text-align: center;
+    align-items: center;
+    border-radius: 10px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 30px;
+    width: fit-content;
+    min-width: 20vw;
+    margin: 10px auto 0;
+}
+
+.empty-shelf {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #8B6955;
+    position: relative;
+    overflow: hidden;
+}
+
+.spider-web-image {
+    width: 100%;
+}
+
+
+.tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    white-space: nowrap;
+    visibility: visible;
+    opacity: 0.9;
+    transition: opacity 0.2s;
+    z-index: 1;
+}

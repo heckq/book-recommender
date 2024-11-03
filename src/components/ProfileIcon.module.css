@@ -1,0 +1,10 @@
+.profile-icon {
+    width: 10vw;
+    height: 10vw;
+    border-radius: 50%;
+    object-fit: contain;
+    cursor: pointer;
+    display: flex;
+    margin-left: 4vw;
+    padding-top:20px;
+}
