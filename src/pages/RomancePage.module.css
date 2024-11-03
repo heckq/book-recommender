@@ -1,0 +1,17 @@
+body {
+    font-family: 'Press Start 2P', cursive;
+    background-color: #A3806C;
+}
+.bookshelf-container {
+    padding-top: 15vh;
+}
+.romance-page {
+    display: flex;
+    background-image: url("../assets/images/love.png");
+    background-size: 45vw;
+}
+
+
+.content{
+    margin-left: 4vw;
+}

@@ -1,0 +1,56 @@
+.profilePage {
+    display: flex;
+    align-items: flex-start;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-right: 20px;
+}
+
+.profileContainer {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-left: 3vw;
+}
+
+.profileImage {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.username {
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: 'Press Start 2P', cursive;
+    color:#593821;
+}
+
+.rightPanelScroll {
+    width: 200px;
+    background-color: rgba(255, 255, 255, 0.8);
+    height: auto;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.iconList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.iconItem {
+    margin: 10px 0;
+}
+
+.iconImage {
+    width: 30px;
+    height: auto;
+}
