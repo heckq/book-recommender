@@ -1,5 +1,6 @@
-import React from 'react';
-import bookIcon from '../assets/images/book-icon.jpg';
+import React, { useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import bookIcon from '../assets/images/book-icon.png';
 import favoriteIcon from '../assets/images/favorite-icon.jpg';
 import readLaterIcon from '../assets/images/read-later-icon.jpg';
 import profileIcon from '../assets/images/profile-picture.jpg';
@@ -7,13 +8,29 @@ import homeIcon from '../assets/images/home.jpg';
 import styles from './BookPage.module.css';
 
 const BookPage = () => {
+    const { state } = useLocation();
+    const book = state?.book; // Отримуємо дані книги з state
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (!book) {
+            console.error("No book data available");
+        }
+    }, [book]);
+
     const handleProfileClick = () => {
         console.log("Profile clicked");
+        navigate('/profile'); // Перехід на сторінку профілю
     };
 
     const handleHomeClick = () => {
         console.log("Home clicked");
+        navigate('/'); // Перехід на домашню сторінку
     };
+
+    if (!book) {
+        return <div>Loading...</div>;
+    }
 
     return (
         <div className={styles.bookPage}>
@@ -36,12 +53,10 @@ const BookPage = () => {
 
             <div className={styles.rightPanel}>
                 <div className={styles.bookInfo}>
-                    <h1>Harry Potter and the Chamber of Secrets</h1>
-                    <h2>J.K. Rowling</h2>
-                    <p className={styles.genres}>Fantasy, fiction, young adult, magic, children's, middle grade, audiobook, adventure, classics, science fiction fantasy</p>
-                    <p className={styles.description}>
-                        Since Harry Potter had come home for the summer, all he wanted was to get back to the Hogwarts School for Witchcraft and Wizardry. But just as he’s packing his bags, Harry receives a warning from a strange impish creature who says that if Harry returns to Hogwarts, disaster will strike. And strike it does. The real trouble begins – someone is turning Hogwarts students to stone. Could it be Draco Malfoy? Maybe it was Hagrid, whose mysterious past is finally told? Or could it be the one everyone at Hogwarts most suspects… Harry Potter himself!
-                    </p>
+                    <h1>{book.title}</h1>
+                    <h2>{book.authors ? book.authors.join(', ') : "Unknown Author"}</h2>
+                    <p className={styles.genres}>{book.category}</p>
+                     <p className={styles.description}>{book.description}</p> {/* Опис */}
                 </div>
             </div>
         </div>

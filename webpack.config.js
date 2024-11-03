@@ -1,26 +1,26 @@
-const path = require("node:path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
-const TerserPlugin = require("terser-webpack-plugin");
+const path = require('node:path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
-module.exports = (env, argv) => {
-    const isProduction = argv.mode === "production";
+module.exports = (environment, argv) => {
+    const isProduction = argv.mode === 'production';
 
     return {
-        entry: path.resolve(__dirname, "./src/index.js"),
+        entry: path.resolve(__dirname, './src/index.js'),
         output: {
-            path: path.resolve(__dirname, "./dist"),
-            filename: isProduction ? "[name].[contenthash].js" : "bundle.js",
+            path: path.resolve(__dirname, './dist'),
+            filename: isProduction ? '[name].[contenthash].js' : 'bundle.js',
             clean: true,
         },
-        mode: isProduction ? "production" : "development",
-        devtool: isProduction ? "source-map" : "inline-source-map",
+        mode: isProduction ? 'production' : 'development',
+        devtool: isProduction ? 'source-map' : 'inline-source-map',
         devServer: {
-            static: path.resolve(__dirname, "dist"), // Serve files from 'dist' directory
+            static: path.resolve(__dirname, 'dist'), // Serve files from 'dist' directory
             port: 3000,
             open: true,
-            historyApiFallback: true, // Enable this to handle non-existent routes
+            historyApiFallback: false, // Enable this to handle non-existent routes
         },
         module: {
             rules: [
@@ -29,9 +29,9 @@ module.exports = (env, argv) => {
                     exclude: /node_modules/,
                     use: [
                         {
-                            loader: "babel-loader",
+                            loader: 'babel-loader',
                             options: {
-                                presets: ["@babel/preset-env", "@babel/preset-react"],
+                                presets: ['@babel/preset-env', '@babel/preset-react'],
                             },
                         },
                     ],
@@ -39,13 +39,13 @@ module.exports = (env, argv) => {
                 {
                     test: /\.css$/i,
                     use: [
-                        isProduction ? MiniCssExtractPlugin.loader : "style-loader",
+                        isProduction ? MiniCssExtractPlugin.loader : 'style-loader',
                         {
-                            loader: "css-loader",
+                            loader: 'css-loader',
                             options: {
                                 modules: {
                                     mode: 'local',
-                                    localIdentName: "[name]__[local]___[hash:base64:5]",
+                                    localIdentName: '[name]__[local]___[hash:base64:5]',
                                     namedExport: false,
                                 },
                             },
@@ -54,7 +54,7 @@ module.exports = (env, argv) => {
                 },
                 {
                     test: /\.(png|jpg|jpeg|gif|svg)$/i,
-                    type: "asset/resource",
+                    type: 'asset/resource',
                 },
             ],
         },
@@ -63,25 +63,26 @@ module.exports = (env, argv) => {
             minimizer: [new CssMinimizerPlugin(), new TerserPlugin()],
         },
         resolve: {
-            extensions: [".js", ".jsx"],
+            extensions: ['.js', '.jsx'],
             alias: {
-                "@app": path.resolve(__dirname, "./src/"),
-                "@components": path.resolve(__dirname, "./src/components"),
-                "@api": path.resolve(__dirname, "./src/api"),
+                '@app': path.resolve(__dirname, './src/'),
+                '@components': path.resolve(__dirname, './src/components'),
+                '@api': path.resolve(__dirname, './src/api'),
+                '@assets': path.resolve(__dirname, './src/assets'),
             },
         },
         plugins: [
             new HtmlWebpackPlugin({
-                template: path.join(__dirname, "public", "index.html"),
+                template: path.join(__dirname, 'public', 'index.html'),
                 minify: isProduction && {
                     collapseWhitespace: true,
                     removeComments: true,
                 },
             }),
             isProduction &&
-            new MiniCssExtractPlugin({
-                filename: "[name].[contenthash].css",
-            }),
+                new MiniCssExtractPlugin({
+                    filename: '[name].[contenthash].css',
+                }),
         ].filter(Boolean),
     };
 };

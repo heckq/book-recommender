@@ -1,17 +1,34 @@
+// src/pages/Settings.jsx
 import React, { useState } from 'react';
 import GenreNav from '../components/GenreNav';
 import styles from './Settings.module.css';
-import profilePicture from '../assets/images/profile-picture.jpg'; // Заміна на актуальне зображення профілю
+import profilePicture from '../assets/images/profile-picture.jpg';
+import { updateUserProfile } from '@api/UserApi';
 
 const Settings = () => {
-    const [username, setUsername] = useState('Current Username'); // Змініть на актуальне ім'я
+    const userId = 1; // ID користувача (можливо, буде динамічним, залежно від авторизації)
+    const [username, setUsername] = useState('Current Username');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
-    const [avatar, setAvatar] = useState(profilePicture); // Стартове зображення
+    const [avatar, setAvatar] = useState(profilePicture);
+    const [message, setMessage] = useState('');
 
-    const handleUpdate = () => {
-        console.log("Settings updated");
-        // Тут можна додати логіку для оновлення даних
+    const handleUpdate = async () => {
+        if (password !== confirmPassword) {
+            setMessage("Passwords do not match");
+            return;
+        }
+        const userData = {
+            username,
+            password,
+            avatar, // Можливо, потрібно буде відправити шлях або іншу форму даних
+        };
+        try {
+            await updateUserProfile(userId, userData);
+            setMessage("Settings updated successfully!");
+        } catch (error) {
+            setMessage("Failed to update settings. Please try again.");
+        }
     };
 
     const handleAvatarChange = (e) => {
@@ -27,7 +44,7 @@ const Settings = () => {
 
     return (
         <div className={styles.settingsPage}>
-            <GenreNav /> {/* Розміщення навігації жанрів */}
+            <GenreNav />
             <div className={styles.content}>
                 <div className={styles.profileContainer}>
                     <div className={styles.avatarContainer}>
@@ -42,6 +59,7 @@ const Settings = () => {
                         />
                     </div>
                     <div className={styles.settingsForm}>
+                        {message && <p className={styles.message}>{message}</p>}
                         <input
                             type="text"
                             placeholder="New Username"
