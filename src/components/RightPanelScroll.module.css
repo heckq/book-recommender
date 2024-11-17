@@ -1,0 +1,35 @@
+.rightPanelScroll {
+    background-image: url('../assets/images/scroll-background.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 15vw;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 30vh;
+}
+
+.iconList {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+    padding: 0;
+    margin: 0;
+}
+
+.iconItem {
+    margin-top: 5vh;
+    margin-right: 1.5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.iconImage {
+    width: 3vw;
+    cursor: pointer;
+    padding: 0;
+}

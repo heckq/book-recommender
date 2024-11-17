@@ -1,0 +1,32 @@
+.genre-nav {
+    background-image: url('../assets/images/scroll-background.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 15vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.genre-image {
+    width: 35%;
+    cursor: pointer;
+    padding-left: 1.7vw;
+}
+
+.genre-nav ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+}
+
+.genre-nav li {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
