@@ -1,0 +1,19 @@
+body {
+    font-family: 'Press Start 2P', cursive;
+    background-color: #A3806C;
+}
+.bookshelf-container {
+    padding-top: 15vh;
+}
+.horror-page {
+    background-image: url("../assets/images/blood-stains.png");
+    background-size: 70vw;
+    background-position:  top;
+    display: flex;
+}
+
+
+.content{
+    margin-left: 4vw;
+}
+
