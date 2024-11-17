@@ -49,6 +49,7 @@ const config = {
             },
         ],
         'unicorn/no-empty-file': 'off',
+        'unicorn/no-anonymous-default-export': 'off',
         'simple-import-sort/exports': 'error',
         'simple-import-sort/imports': 'error',
         'import/namespace': [2, { allowComputed: true }],

@@ -4,7 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
-module.exports = (environment, argv) => {
+module.exports = (environment, argv = {}) => {
     const isProduction = argv.mode === 'production';
 
     return {
@@ -17,10 +17,10 @@ module.exports = (environment, argv) => {
         mode: isProduction ? 'production' : 'development',
         devtool: isProduction ? 'source-map' : 'inline-source-map',
         devServer: {
-            static: path.resolve(__dirname, 'dist'), // Serve files from 'dist' directory
+            static: path.resolve(__dirname, 'dist'),
             port: 3000,
             open: true,
-            historyApiFallback: false, // Enable this to handle non-existent routes
+            historyApiFallback: true,
         },
         module: {
             rules: [
@@ -80,9 +80,9 @@ module.exports = (environment, argv) => {
                 },
             }),
             isProduction &&
-                new MiniCssExtractPlugin({
-                    filename: '[name].[contenthash].css',
-                }),
+            new MiniCssExtractPlugin({
+                filename: '[name].[contenthash].css',
+            }),
         ].filter(Boolean),
     };
 };
